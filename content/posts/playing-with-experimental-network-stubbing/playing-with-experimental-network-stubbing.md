@@ -171,6 +171,6 @@ cy
 ```
 <v-video alt="Changing network request body in Cypress" src="changing_network_request_body_in_cypress.mp4"></v-video>
 
-All these examples can be found in a [repo that I have put together for this blog](https://github.com/filiphric/route2-showcase). Feel free to play around with it and <nuxt-link to="https://twitter.com/filip_hric">let me know on twitter</nuxt-link>, what you think of this new feature. In my perspective Cypress team has done amazing job here, and I’m excited about possibilities this change will bring.
+All these examples can be found in a [repo that I have put together for this blog](https://github.com/filiphric/route2-showcase). Feel free to play around with it and [let me know on Twitter](https://twitter.com/filip_hric/), what you think of this new feature. In my perspective Cypress team has done amazing job here, and I’m excited about possibilities this change will bring.
 
 >EDIT: [Gleb Bahmutov](https://twitter.com/bahmutov) from Cypress [wrote a really cool blog](https://glebbahmutov.com/blog/cy-route-vs-route2/) on differences between `.route()` and `.route2()` commands, where he demonstrates some cool stuff you can do with `.route2()`. You should definitely check it out.
