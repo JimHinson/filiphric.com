@@ -25,10 +25,6 @@
       "source": "/twitch"
     },
     {
-      "destination": "https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?referralCode=21A875FF429457CF641D",
-      "source": "/cy-course"
-    },
-    {
       "destination": "/skip-test-conditionally-with-cypress",
       "source": "/skip-tests"
     },
@@ -61,8 +57,8 @@
       "source": "/bootcamp"
     },
     {
-      "destination": "https://github.com/filiphric/javascript-days-workshop",
-      "source": "/jsdays"
+      "destination": "https://link.cypress.io/filip",
+      "source": "/feedback"
     }
   ]
 }
