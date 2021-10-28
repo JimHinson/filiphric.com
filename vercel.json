@@ -59,6 +59,10 @@
     {
       "destination": "https://link.cypress.io/filip",
       "source": "/feedback"
+    },
+    {
+      "destination": "https://github.com/filiphric/trelloapp-vue-vite-ts/tree/storybook",
+      "source": "/trelloapp"
     }
   ]
 }
