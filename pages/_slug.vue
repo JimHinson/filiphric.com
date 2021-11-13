@@ -6,7 +6,10 @@
     >
       {{ post.title }}
     </h1>
-    <p class="text-center font-mono" data-cy="blog-author">
+    <p
+      class="text-center font-mono"
+      data-cy="blog-author"
+    >
       by {{ post.author || "Filip Hric" }},
       {{
         new Date(post.date).toLocaleDateString("en-gb", {
@@ -16,19 +19,33 @@
         })
       }}
     </p>
-    <p class="font-mono text-sm text-center" data-cy="blog-readingTime">
+    <p
+      class="font-mono text-sm text-center"
+      data-cy="blog-readingTime"
+    >
       {{ post.readingTime }}
     </p>
-    <hr class="my-8 border-black w-1/5 m-auto" />
+    <hr class="my-8 border-black w-1/5 m-auto">
     <nuxt-content
       :document="post"
       class="text-base sm:text-lg font-light gradient-link"
       data-cy="blog-content"
     />
+    <div class="grid place-items-center">
+      <button
+        class="bg-red text-white w-1/4 px-4 py-2 font-mono font-bold sm:mx-auto md:mx-0 hover:bg-red-dark transition ease-in-out focus:outline-none"
+        @click="copyLink"
+      >
+        Click to copy article link
+      </button>
+    </div>
     <div class="relative mx-2">
-      <hr class="my-8 border-black w-1/5 m-auto" />
+      <hr class="my-8 border-black w-1/5 m-auto">
       <div class="grid mb-16 justify-items-stretch grid-flow-col gradient-link">
-        <div v-if="prev" class="mr-auto self-center w-4/5 prevNext">
+        <div
+          v-if="prev"
+          class="mr-auto self-center w-4/5 prevNext"
+        >
           <p>Previous post:</p>
           <NuxtLink
             class="relative font-mono font-semibold text-lg pb-1"
@@ -37,7 +54,10 @@
             {{ prev.title }}
           </NuxtLink>
         </div>
-        <div v-if="next" class="ml-auto self-center w-4/5 text-right prevNext">
+        <div
+          v-if="next"
+          class="ml-auto self-center w-4/5 text-right prevNext"
+        >
           <p>Next post:</p>
           <NuxtLink
             class="relative font-mono font-semibold text-lg pb-1"
@@ -160,6 +180,13 @@ export default {
   mounted() {
     Prism.highlightAll();
   },
+  methods: {
+    copyLink() {
+      const clipBoardValue = window.location.href;
+      const clipboard = window.navigator.clipboard;
+      return clipboard.writeText(clipBoardValue);
+    },
+  }
 };
 </script>
 
