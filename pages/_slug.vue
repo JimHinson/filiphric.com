@@ -248,5 +248,8 @@ export default {
   ol {
     @apply list-decimal list-inside	my-8;
   }
+  h3 {
+    @apply font-mono text-base text-black font-bold mt-8;
+  }
 </style>
 
