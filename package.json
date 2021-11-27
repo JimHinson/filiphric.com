@@ -1,10 +1,10 @@
 {
-  "name": "nuxt-filiphric.com",
+  "name": "filiphric.com",
   "description": "Filip Hric’s personal blog. I write weekly tips and tricks about Cypress.io and do video courses and workshops on topic of testing in Cypress.io.",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --port 8000",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -36,7 +36,7 @@
     "@types/node": "^14.14.35",
     "babel-eslint": "^10.1.0",
     "clipboardy": "^2.3.0",
-    "cypress": "^6.7.0",
+    "cypress": "^9.1.0",
     "cypress-real-events": "^1.3.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-loader": "^4.0.2",

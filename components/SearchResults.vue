@@ -1,51 +1,54 @@
 <template>
-<div class="min-w-screen-md">
-  <ul
-    v-if="posts.length"
-    class="mt-8"
-  >
-    <li
-      v-for="(post, index) of posts"
-      :key="post.slug"
-      data-cy="post"
-      class="grid grid-cols-12 my-8"
+  <div class="min-w-screen-md">
+    <ul
+      v-if="posts.length"
+      class="mt-8"
     >
-      <p class="hidden sm:block text-sm font-normal col-span-2 self-start justify-self-center p-2 mr-2 text-gray-400">
-        {{ dateToYMD(new Date(post.date)) }}
-      </p>
-      <div
-        class="col-span-12 sm:col-span-10 self-center relative"
+      <li
+        v-for="post of posts"
+        :key="post.slug"
+        data-cy="post"
+        class="grid grid-cols-12 my-8"
       >
-        <nuxt-link
-          :to="`/${post.slug}`"
-          :class="`font-mono text-2xl font-semibold pt-1 pb-1 relative w-full linkColor${getColor(index+1)}`"
-        >
-          {{ post.title }}
-        </nuxt-link>
-        <p class="font-sans font-thin text-base block pt-2">
-          {{ post.description }}
+        <p class="hidden sm:block text-sm font-normal col-span-2 self-start justify-self-center p-2 mr-2 text-gray-400">
+          {{ dateToYMD(new Date(post.date)) }}
         </p>
-        <div class="my-2 ">
-          <div
-            v-for="tag in post.tags"
-            :key="tag"
-            :class="`text-xs font-normal px-3 py-1 inline-block mr-1 rounded-xl text-white text-center color${searchTag(tag)}`"
+        <div
+          class="col-span-12 sm:col-span-10 self-center relative"
+        >
+          <nuxt-link
+            :to="`/${post.slug}`"
+            :class="`font-mono text-2xl font-semibold pt-1 pb-1 relative w-full`"
           >
-            #{{ tag }}
+            {{ post.title }}
+          </nuxt-link>
+          <p class="font-sans font-thin text-base block pt-2">
+            {{ post.description }}
+          </p>
+          <div class="my-2 ">
+            <div
+              v-for="tag in post.tags"
+              :key="tag"
+              :class="`text-xs font-normal pr-3 inline-block text-green-dark text-center`"
+            >
+              #{{ tag }}
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-  </ul>
-  <ul v-else class="mt-8">
-    <li
-      class="grid grid-cols-12 my-8"
+      </li>
+    </ul>
+    <ul
+      v-else
+      class="mt-8"
     >
-      <p class="font-sans font-thin text-base block pt-2 col-span-12">
-        No posts were found.
-      </p>
-    </li>
-  </ul>
+      <li
+        class="grid grid-cols-12 my-8"
+      >
+        <p class="font-sans font-thin text-base block pt-2 col-span-12">
+          No posts were found.
+        </p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -57,65 +60,6 @@ export default {
       type: Array,
       required: true
     },
-    // tags: {
-    //   type: Array,
-    //   required: false
-    // }
-  },
-  // data() {
-  //   return {
-  //   tags() {
-  //     console.log('I’m actually doing something')
-  //     console.log(this.posts)
-  //     const allTags = this.posts
-  //       .map(p => { return p.tags }) // collect tags from all blogs
-  //       .filter(Boolean)
-  //       .flat(); // remove undefined
-  //     // assign color 1 - 6
-  //     const getColor = (i) => {
-  //       if ((i - 6) <= 0) {
-  //         return i;
-  //       } else {
-  //         return getColor(i - 6);
-  //       }
-  //     }
-
-  //     const flatTags = [...new Set(allTags)]; // remove duplicates
-  //     // assign colors
-  //       const tags = flatTags.map( (tag, index) => {
-  //       const color = getColor(index + 1)
-  //       return { tag, color }
-  //     })
-  //   },
-  //   }
-  // },
-  computed: {
-    allTags() {
-      const allTags = this.posts
-        .map(p => { return p.tags }) // collect tags from all blogs
-        .filter(Boolean)
-        .flat();
-
-      const flatTags = [...new Set(allTags)]; // remove duplicates
-
-      return flatTags
-    },
-    tags() {
-      const getColor = (i) => {
-        if ((i - 6) <= 0) {
-          return i;
-        } else {
-          return getColor(i - 6);
-        }
-      }
-
-      const tags = this.allTags.map( (tag, index) => {
-        const color = getColor(index + 1);
-        return { tag, color }
-      })
-
-      return tags
-    }
   },
   methods: {
     dateToYMD(date) {
@@ -125,16 +69,6 @@ export default {
       var y = date.getFullYear();
       return '' + (d <= 9 ? '0' + d : d) + ' ' + m + '\n' + y;
     },
-    getColor(i) {
-      if ((i - 6) <= 0) {
-        return i;
-      } else {
-        return this.getColor(i - 6);
-      }
-    },
-    searchTag(tagName) {
-      return this.tags.find(t => t.tag === tagName).color
-    }
   }
 }
 </script>

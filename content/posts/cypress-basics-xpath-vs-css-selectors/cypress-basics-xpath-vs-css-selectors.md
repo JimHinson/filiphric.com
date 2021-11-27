@@ -6,7 +6,7 @@ slug: "cypress-basics-xpath-vs-css-selectors"
 description: "Using xpath with Cypress is possible through a plugin. In this post I show you how to install this plugin and show you some examples how to use xpath and compare it to Cypress commands."
 tags: ['cypress', 'selectors', 'xpath', 'locators']
 ---
-Let me start right of the bat stating that I’m not the biggest fan of xpath selectors. In my opinion, they are hard to read, and provide little benefits in comparison to CSS selectors or data-* attributes. With jQuery bundled into Cypress, you can select your elements in a much more readable way. However, they are widely used and a go-to choice for projects where you don’t have access to the source code. That’s why it’s useful to have knowledge on how to use them.
+Let me start right of the bat stating that I’m not the biggest fan of [xpath selectors](https://developer.mozilla.org/en-US/docs/Web/XPath). In my opinion, they are hard to read, and provide little benefits in comparison to CSS selectors or data-* attributes. With jQuery bundled into Cypress, you can select your elements in a much more readable way. However, they are widely used and a go-to choice for projects where you don’t have access to the source code. That’s why it’s useful to have knowledge on how to use them.
 
 ## Cypress and xpath
 To use xpath selectors, you must first [install a plugin](https://github.com/cypress-io/cypress-xpath). It is an official plugin maintained by Cypress. The installation is pretty standard. Just `npm install -D cypress-xpath` to install the package. 

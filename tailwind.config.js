@@ -1,5 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 module.exports = {
   purge: [
     "./components/**/*.{vue,js}",
@@ -60,7 +58,7 @@ module.exports = {
         "4xl": "2rem",
       },
       outline: {
-        red: '2px solid #ff657a',
+        red: '2px solid #1eba7d',
       },
       colors: {
         black: {
@@ -75,10 +73,15 @@ module.exports = {
           DEFAULT: "#c39ac9",
         },
         green: {
-          DEFAULT: "#bad761",
+          DEFAULT: "#1eba7d",
+          dark: '#157b59'
         },
         orange: {
           DEFAULT: "#ff9b5e",
+        },
+        blue: {
+          DEFAULT: '#297bd2',
+          dark: '#1b4879'
         },
         red: {
           light: "#ffb2bd",

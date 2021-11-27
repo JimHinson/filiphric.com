@@ -25,23 +25,19 @@
     >
       {{ post.readingTime }}
     </p>
-    <hr class="my-8 border-black w-1/5 m-auto">
+    <Divider />
     <nuxt-content
       :document="post"
-      class="text-base sm:text-lg font-light gradient-link"
+      class="text-base sm:text-lg font-light"
       data-cy="blog-content"
     />
-    <div class="grid place-items-center">
-      <button
-        class="bg-red text-white w-1/4 px-4 py-2 font-mono font-bold sm:mx-auto md:mx-0 hover:bg-red-dark transition ease-in-out focus:outline-none"
-        @click="copyLink"
-      >
-        Click to copy article link
-      </button>
-    </div>
+    <Divider />
+    <CopyButton />
+    <Divider />
+    <CourseInfo />
+    <Divider />
     <div class="relative mx-2">
-      <hr class="my-8 border-black w-1/5 m-auto">
-      <div class="grid mb-16 justify-items-stretch grid-flow-col gradient-link">
+      <div class="grid mb-16 justify-items-stretch grid-flow-col">
         <div
           v-if="prev"
           class="mr-auto self-center w-4/5 prevNext"
@@ -71,17 +67,23 @@
   </article>
 </template>
 <script>
+/* eslint-disable vue/no-unused-components */
 import Prism from "~/plugins/prism";
 import VImg from "~/components/VImg";
 import VVideo from "~/components/VVideo";
+import CourseInfo from "~/components/post/CourseInfo";
 import { Tweet } from "vue-tweet-embed";
+import CopyButton from "../components/post/copyButton.vue";
+import Divider from "../components/post/Divider.vue";
 export default {
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     VImg,
     VVideo,
     Tweet,
-  },
+    CourseInfo,
+    CopyButton,
+    Divider
+},
   layout: "post",
   async asyncData({ params, error, $content }) {
     try {
@@ -180,13 +182,6 @@ export default {
   mounted() {
     Prism.highlightAll();
   },
-  methods: {
-    copyLink() {
-      const clipBoardValue = window.location.href;
-      const clipboard = window.navigator.clipboard;
-      return clipboard.writeText(clipBoardValue);
-    },
-  }
 };
 </script>
 
@@ -200,12 +195,8 @@ export default {
     @apply pr-1 bg-black pb-1 my-4 lg:-mx-8;
     background: linear-gradient(
       90deg,
-      #9cd1bb,
-      #c39ac9,
-      #ff657a,
-      #ff9b5e,
-      #ffd76d,
-      #bad761
+      #1eba7d,
+      #297bd2
     );
   }
 

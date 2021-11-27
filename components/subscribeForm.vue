@@ -8,7 +8,7 @@
       aria-valuemax="100"
     >
       <div
-        class="bg-red h-1 text-center"
+        class="bg-blue h-1 text-center"
         :style="`width: ${progressBarWidth}%; transition: width ${progressBarDuration}s linear;`"
       />
     </div>
@@ -32,26 +32,26 @@
           <input
             v-model="first_name"
             type="text"
-            placeholder="Jane Doe"
-            class=" text-black font-mono block mt-4 h-10 px-3 w-4/6 sm:mx-auto sm:w-5/6 md:mx-0 md:w-full focus:outline-red"
+            placeholder="Gleb Bahmutov"
+            class=" text-black font-mono block mt-4 h-10 px-3 w-4/6 sm:mx-auto sm:w-5/6 md:mx-0 md:w-full focus:outline-blue"
           >
           <input
             v-model="email_address"
             type="email"
-            placeholder="jane@doe.com"
-            class=" text-black font-mono block mt-4 h-10 px-3 w-4/6 sm:mx-auto sm:w-5/6 md:mx-0 md:w-full focus:outline-red"
+            placeholder="gleb@almighty.com"
+            class=" text-black font-mono block mt-4 h-10 px-3 w-4/6 sm:mx-auto sm:w-5/6 md:mx-0 md:w-full focus:outline-blue"
           >
           <div class="absolute sm:left-1/2 md:left-auto">
             <p
               v-if="errors.length"
-              class="error text-xs text-red relative pt-1 sm:-left-1/2 md:left-0"
+              class="error text-xs text-blue relative pt-1 sm:-left-1/2 md:left-0"
             >
               {{ errors.join('and ') }} {{ errors.length > 1 ? 'are' : 'is' }} required
             </p>
           </div>
           <button
             on:click="submit"
-            class="bg-red h-12 mt-8 block px-4 py-2 font-mono font-bold sm:mx-auto md:mx-0 hover:bg-red-dark transition ease-in-out focus:outline-none"
+            class="bg-blue h-12 mt-8 block px-4 py-2 font-mono font-bold sm:mx-auto md:mx-0 hover:bg-blue-dark transition ease-in-out focus:outline-none"
           >
             Subscribe
           </button>
@@ -196,7 +196,7 @@ export default {
   }
 
   p > a:after {
-    @apply absolute w-0 bg-none bg-repeat bg-scroll bg-transparent bg-red bottom-0 block h-1 left-1/2;
+    @apply absolute w-0 bg-none bg-repeat bg-scroll bg-transparent bg-blue bottom-0 block h-1 left-1/2;
     content: "";
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
   }
