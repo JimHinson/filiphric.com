@@ -6,7 +6,6 @@
     <section class="min-h-96 text-white bg-black-dark">
       <div class="h-full grid relative mx-8 pb-4 md:px-8 md:max-w-screen-md md:grid-cols-2 md:mx-auto lg:px-0">
         <div class="bg" />
-        <div class="blob" />
         <div class="self-center z-10">
           <h1 class="font-mono font-bold text-4xl">
             Hi, I’m Filip. I&nbsp;share my learnings on this blog.

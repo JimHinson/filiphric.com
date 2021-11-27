@@ -10,22 +10,21 @@
       <ais-autocomplete>
         <div slot-scope="{ currentRefinement, indices, refine }">
           <input
-            type="search"
             ref="searchInput"
+            type="search"
             :placeholder="searchPlaceholder"
             class="search w-full h-10 inline-block mx-auto shadow-md p-2 font-mono font-semibold focus:outline-none place-self-start min-w-screen-md"
             :value="currentRefinement"
-            @input="refine($event.currentTarget.value), toggleSearch(Boolean($event.currentTarget.value))"
             autocomplete="off"
+            @input="refine($event.currentTarget.value), toggleSearch(Boolean($event.currentTarget.value))"
             @focus="showResults = true"
             @keydown.enter="goToDoc(indices)"
           >
-          <SearchResults :posts=indices[0].hits />
+          <SearchResults :posts="indices[0].hits" />
         </div>
       </ais-autocomplete>
     </ais-configure>
   </ais-instant-search>
-
 </template>
 
 <script>
@@ -35,24 +34,6 @@ export default {
   data() {
     return {
       searchClient: algoliasearch('DESAPEUM30', 'd555dbd8f044d5fffed00bb29d7d2a60')
-    }
-  },
-  mounted: function () {
-    this.toggleSearch(false)
-    this.$nextTick(function () {
-      window.addEventListener('keydown', event => {
-        if(event.metaKey && event.key === 'k') {
-          this.$refs.searchInput.focus()
-          event.preventDefault()
-        }
-      })
-    })
-  },
-  watch: {
-    '$route' () {
-      this.toggleSearch(false)
-      this.showResults = false
-      this.$refs.searchInput.blur()
     }
   },
   computed: {
@@ -69,6 +50,24 @@ export default {
     searching () {
       return this.$store.state.searching
     }
+  },
+  watch: {
+    '$route' () {
+      this.toggleSearch(false)
+      this.showResults = false
+      this.$refs.searchInput.blur()
+    }
+  },
+  mounted: function () {
+    this.toggleSearch(false)
+    this.$nextTick(function () {
+      window.addEventListener('keydown', event => {
+        if(event.metaKey && event.key === 'k') {
+          this.$refs.searchInput.focus()
+          event.preventDefault()
+        }
+      })
+    })
   },
   methods: {
     ...mapMutations({

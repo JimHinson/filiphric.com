@@ -12,7 +12,7 @@
             </h2>
             <Socials :rss="true" />
             <p class="text-white font-mono text-sm mt-8 mb-12 md:text-right md:mt-6">
-              ...brought to you with all my love ❤️ Filip Hric
+              ...brought to you with all my love ❤️
             </p>
           </div>
         </div>

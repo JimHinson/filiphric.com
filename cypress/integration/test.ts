@@ -54,6 +54,27 @@ it('copy code works', () => {
     .task('getClipboard')
     .should('eq', 'index.html\napp.js\nstyle.css\n')
 
+  cy
+    .get('#articleLink')
+    .realClick()
+
+  cy
+    .log('code is copied')
+    .task('getClipboard')
+    .should('contain', '/understanding-code-coverage')
+
+});
+
+it('shows posts on home page', () => {
+
+  cy
+    .visit('/')
+
+  cy
+    .get('[data-cy=post]')
+    .should('be.visible')
+    .should('have.length', 5);
+
 });
 
 it('shows posts on search page', () => {

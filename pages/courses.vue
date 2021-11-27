@@ -40,7 +40,7 @@
                 {{ course.description }} <a
                   v-if="course.href"
                   :href="course.href"
-                  class="linkColor1 font-bold pb-1"
+                  class="font-bold pb-1"
                 >Visit course site</a>
               </p>
               <a

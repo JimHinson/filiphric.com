@@ -9,7 +9,7 @@
     >
       <div
         id="overlay"
-        class="fixed w-screen h-screen top-0 left-0 bottom-0 right-0 z-20 cursor-pointer bg-black opacity-90 gradient-link"
+        class="fixed w-screen h-screen top-0 left-0 bottom-0 right-0 z-20 cursor-pointer bg-black opacity-90"
         @click="hideMenu()"
       >
         <MenuItems class="text-4xl font-mono font-semibold text-white h-full grid auto-rows-min place-content-center place-items-center gap-6" />

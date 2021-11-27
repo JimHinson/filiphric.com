@@ -1,3 +1,11 @@
+- title: Test network edge cases with .intercept() command in Cypress
+  description: .intercept() command is one of the most fun command to use. It’s especially useful when you are done with all your happy paths and want to test some edge cases.
+  href: https://egghead.io/courses/test-network-edge-cases-with-cy-intercept-command-in-cypress-0fd94c68?af=1mdhb0
+  image: egghead_square.png
+  alt: Test network edge cases with .intercept() command in Cypress
+  onSale: false
+  commingSoon: false
+
 - title: Test automatizácia v Cypress.io
   description: Deep dive into testing with Cypress. Get ready for a job in test automation with Cypress. Hosted on learn2code.sk. 🇸🇰 Course is in Slovak language.
   href: https://www.learn2code.sk/kurzy/test-automatizacia-v-cypress-io
