@@ -63,6 +63,10 @@
     {
       "destination": "https://discord.gg/45UtpwJPXd",
       "source": "/tau-workshop"
+    },
+    {
+      "destination": "https://calendly.com/filip_hric/meeting",
+      "source": "/lets-meet"
     }
   ]
 }
