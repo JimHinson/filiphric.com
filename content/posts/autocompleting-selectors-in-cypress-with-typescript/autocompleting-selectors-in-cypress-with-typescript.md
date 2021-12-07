@@ -28,7 +28,7 @@ When using TypeScript, you can further define what kind of input will our newly 
 ```ts
 type Selectors = 'board' | 'list' | 'card'
 
-Cypress.Commands.add('getDataCy', (input: string) => {
+Cypress.Commands.add('getDataCy', (input: Selectors) => {
   return cy.get(`[data-cy='${input}']`);
 })
 ```
