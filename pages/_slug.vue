@@ -217,6 +217,10 @@ export default {
     @apply relative font-semibold pb-1;
   }
 
+  p > strong {
+    @apply font-semibold;
+  }
+
   li {
     @apply list-disc list-inside;
   }
