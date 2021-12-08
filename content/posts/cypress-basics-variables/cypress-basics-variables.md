@@ -120,7 +120,7 @@ Now that the problem is clearer, let’s look at how we can pass values around i
 
 ### Solution #1: Move the desired code inside command chain
 
-The easiest solution is to make sure that anything we include everything in our command chain. To use the new value, we need to call our `.visit()` function inside the command chain. That way, the `id` will be passed with a new value. Of course, multiple `.then()` funcitons can potentially cause a "pyramid of doom", so this solution is bes for cases when you want to immediately pass a single variable.
+The easiest solution is to make sure that anything we include everything in our command chain. To use the new value, we need to call our `.visit()` function inside the command chain. That way, the `id` will be passed with a new value. Of course, multiple `.then()` funcitons can potentially cause a "pyramid of doom", so this solution is best for cases when you want to immediately pass a single variable.
 
 
 ```js
