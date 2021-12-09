@@ -67,6 +67,10 @@
     {
       "destination": "https://calendly.com/filip_hric/meeting",
       "source": "/lets-meet"
+    },
+    {
+      "destination": "https://calendly.com/filip_hric/consultation-90-min",
+      "source": "/consultation"
     }
   ]
 }
