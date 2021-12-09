@@ -71,8 +71,8 @@ it('creates a todo', () => {
   cy.visit('/')
   cy.addTodo('buy milk') // create a todo via UI using custom command
   cy.wait('@createTodo').then( todos => {
-      expect(todos.status).to.eq(201)
-      expect(todos.responseBody).to.deep.eq({ title: 'buy milk' })
+      expect(todos.response.statusCode).to.eq(201)
+      expect(todos.response.body).to.deep.eq({ title: 'buy milk' })
     })
 
 })
@@ -84,9 +84,9 @@ it('creates a todo', () => {
   cy.intercept('POST', '/todos').as('createTodo')
   cy.visit('/')
   cy.addTodo('buy milk') // create a todo via UI using custom command
-  cy.wait('@createTodo').then( ({ status, responseBody }) => {
-      expect(status).to.eq(201)
-      expect(responseBody).to.deep.eq({ title: 'buy milk' })
+  cy.wait('@createTodo').then( ({ response }) => {
+      expect(response?.statusCode).to.eq(201)
+      expect(response?.body).to.deep.eq({ title: 'buy milk' })
     })
 
 })
